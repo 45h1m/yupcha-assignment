@@ -1,0 +1,22 @@
+input:not(:placeholder-shown):invalid, textarea:not(:placeholder-shown):invalid {
+    background: url('/close.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    outline: 2px solid #c11616;
+}
+input:valid, textarea:valid {
+    background: url('/check.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    outline: 2px solid #16c155;
+}
+
+select:valid {
+    background: url('/check.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+    outline: 2px solid #16c155;
+}
