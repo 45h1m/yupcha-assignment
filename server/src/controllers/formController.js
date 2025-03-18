@@ -12,7 +12,7 @@ function handleFormSubmit(req, response) {
         if(data.name.length < 4) {
             return response.status(400).json({ success: false, error: "Name must be at least 4 characters long" });
         }
-        if(data.length > 40) {
+        if(data.name.length > 40) {
             return response.status(400).json({ success: false, error: "Name must be at most 40 characters long" });
         }
     }
@@ -74,7 +74,7 @@ function handleFormSubmit(req, response) {
     } else {
         data.gender = data.gender.trim();
         if(data.gender !== "male" && data.gender !== "female" && data.gender !== "other") {
-            return response.status(400).json({ success: false, error: "Gender must be at most 20 characters long" });
+            return response.status(400).json({ success: false, error: "Gender must be 'male', 'female' or 'other'" });
         }
     }
 
