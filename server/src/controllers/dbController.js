@@ -6,6 +6,10 @@ function saveForm(data) {
     if(savedForms.some(form => form.email === data.email)) {
         return {success: false, error: "Email already exists"}
     }
+
+    if(savedForms.some(form => form.phone === data.phone)) {
+        return {success: false, error: "Phone number already exists"}
+    }
     
     savedForms.push(data);
 

@@ -37,7 +37,7 @@ function handleFormSubmit(req, response) {
         return response.status(400).json({ success: false, error: "Phone number is required" });
     } else {
         data.phone = data.phone.trim();
-        if(!data.phone.match(/[^0-9]/)) {
+        if(data.phone.match(/[^0-9]/)) {
             return response.status(400).json({ success: false, error: "Phone number must be numeric" });
         }
         if(data.phone.length !== 10) {
@@ -61,7 +61,7 @@ function handleFormSubmit(req, response) {
         return response.status(400).json({ success: false, error: "Age is required" });
     } else {
         data.age = data.age.trim();
-        if(!data.age.match(/[^0-9]/)) {
+        if(data.age.match(/[^0-9]/)) {
             return response.status(400).json({ success: false, error: "Age must be numeric" });
         }
         if(parseInt(data.age) < 12 || data.age > 100) {
@@ -94,8 +94,6 @@ function getAllForms(req, res) {
     console.log("Getting all forms");
 
     const data = getSavedForms();
-
-    console.log(data);
 
     res.status(200).json({ success: true, data });
 }

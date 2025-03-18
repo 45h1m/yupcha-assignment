@@ -71,8 +71,8 @@ const MultiStepForm = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-900 text-gray-100 p-4">
-            <div className="bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md">
+        <>
+            <div className={`bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md ${submitting ? "animate-pulse" : ""}`}>
                 {success ? (
                     <div className="text-center py-8">
                         <div className="text-green-400 text-5xl mb-4">✓</div>
@@ -99,14 +99,15 @@ const MultiStepForm = () => {
                 ) : (
                     <>
                         <div className="flex justify-between items-center mb-6 flex-wrap gap-2">
-                            <h1 className="text-2xl font-bold text-indigo-400 whitespace-nowrap">{currentStep === 1 ? "Personal Details" : "Contact Details"}</h1>
+                            {currentStep === 2 && <h1 className="text-2xl font-bold text-indigo-400 whitespace-nowrap animate-in">Contact Details</h1>}
+                            {currentStep === 1 && <h1 className="text-2xl font-bold text-indigo-400 whitespace-nowrap animate-in">Personal Details</h1>}
                             {/* <div className="flex">
                                 <div className={`whitespace-nowrap h-min px-2 py-1 rounded-full ${currentStep === 1 ? "bg-indigo-500" : "bg-gray-600"} mr-2`}>Step 1</div>
                                 <div className={`w-8 rounded-full ${currentStep === 2 ? "bg-indigo-500" : "bg-gray-600"}`}>Step 2</div>
                             </div> */}
                             <div className="flex items-center w-full max-w-[8rem] ">
                                 <span className={`w-5 h-1 bg-gradient-to-tr from-transparent to-indigo-600`}></span>
-                                <button onClick={()=> backButtonRef.current?.click()} className={`cursor-pointer transition duration-200 z-10 size-4 rounded-full bg-indigo-500 ${currentStep === 1 ? "ring-4 ring-indigo-400" : ""}`}></button>
+                                <button onClick={()=> backButtonRef.current?.click()} className={`cursor-pointer transition duration-200 z-0 size-4 rounded-full bg-indigo-500 ${currentStep === 1 ? "ring-4 ring-indigo-400" : ""}`}></button>
                                 <span className={`transition duration-200 flex-1/2 h-1 ${currentStep === 2 ? "bg-indigo-600" : "bg-gray-700"}`}></span>
                                 <button onClick={()=> nextButtonRef.current?.click()} className={`cursor-pointer transition duration-200 size-4 rounded-full ${currentStep === 2 ? "bg-indigo-500 ring-4 ring-indigo-400" : "bg-gray-600"}`}></button>
                             </div>
@@ -200,6 +201,7 @@ const MultiStepForm = () => {
                                             name="email"
                                             id="email"
                                             type="email"
+                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                                             title="Enter a valid email address, at least 6 characters long and at most 30 characters."
                                             required
                                             placeholder="Enter your email"
@@ -297,7 +299,7 @@ const MultiStepForm = () => {
                 )}
                 {error && <p className="text-red-400 text-sm mt-3 bg-red-950 py-2 px-4 rounded-md">{error}</p>}
             </div>
-        </div>
+        </>
     );
 };
 

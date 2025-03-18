@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+:root {
+    interpolate-size: allow-keywords;
+}
+
 .animate-in {
     animation: come-in 200ms ease forwards;
 }
@@ -13,3 +18,4 @@
         transform: translateX(0px);
     }
 }
+
