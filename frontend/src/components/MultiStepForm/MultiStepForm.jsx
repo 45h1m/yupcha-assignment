@@ -35,7 +35,7 @@ const MultiStepForm = () => {
 
             await new Promise((resolve) => setTimeout(resolve, 2000));
 
-            const res = await fetch("http://localhost:80/api/submit-form", {
+            const res = await fetch("api/submit-form", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
