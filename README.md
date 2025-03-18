@@ -1,5 +1,5 @@
 # Yupcha Fullstack Assignment
-## Frontend features
+## Frontend features - React + Tailwind
 - Modern UI/UX
 - Step Tracker
 - Realtime input validation with UI feedback
@@ -9,7 +9,7 @@
 - Step animation
 - Sucess page
 - Error message in case of validation error in server or network error
-## Backend features
+## Backend features - Express
 - Standard and clean project/code structure
 - Robust error handling
 - POST /api/submit-form - accepts all fields at and validates
