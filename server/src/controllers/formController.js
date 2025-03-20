@@ -9,6 +9,9 @@ function handleFormSubmit(req, response) {
         return response.status(400).json({ success: false, error: "Name is required" });
     } else {
         data.name = data.name.trim();
+        if(!data.name.match(/^[A-Za-z]+(([',. -][A-Za-z ])?[A-Za-z]*)*$/)) {
+            return response.status(400).json({ success: false, error: "Name must be a valid name" });
+        }
         if(data.name.length < 4) {
             return response.status(400).json({ success: false, error: "Name must be at least 4 characters long" });
         }
