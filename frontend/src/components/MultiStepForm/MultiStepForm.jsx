@@ -297,7 +297,7 @@ const MultiStepForm = () => {
                         )}
                     </>
                 )}
-                {error && <p className="text-red-400 text-sm mt-3 bg-red-950 py-2 px-4 rounded-md">{error}</p>}
+                {error && <p className="text-red-200 text-sm mt-3 border border-red-600 bg-red-900/30 py-2 px-4 rounded-md">{error}</p>}
             </div>
         </>
     );
