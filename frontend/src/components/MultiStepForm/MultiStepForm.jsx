@@ -98,18 +98,18 @@ const MultiStepForm = () => {
                     </div>
                 ) : (
                     <>
-                        <div className="flex justify-between items-center mb-6 flex-wrap gap-2">
+                        <div className="flex justify-start items-center mb-6 flex-wrap gap-4">
                             {currentStep === 2 && <h1 className="text-2xl font-bold text-indigo-400 whitespace-nowrap animate-in">Contact Details</h1>}
                             {currentStep === 1 && <h1 className="text-2xl font-bold text-indigo-400 whitespace-nowrap animate-in">Personal Details</h1>}
                             {/* <div className="flex">
                                 <div className={`whitespace-nowrap h-min px-2 py-1 rounded-full ${currentStep === 1 ? "bg-indigo-500" : "bg-gray-600"} mr-2`}>Step 1</div>
                                 <div className={`w-8 rounded-full ${currentStep === 2 ? "bg-indigo-500" : "bg-gray-600"}`}>Step 2</div>
                             </div> */}
-                            <div className="flex items-center w-full max-w-[8rem] ">
-                                <span className={`w-5 h-1 bg-gradient-to-tr from-transparent to-indigo-600`}></span>
-                                <button onClick={()=> backButtonRef.current?.click()} className={`cursor-pointer transition duration-200 z-0 size-4 rounded-full bg-indigo-500 ${currentStep === 1 ? "ring-4 ring-indigo-400" : ""}`}></button>
-                                <span className={`transition duration-200 flex-1/2 h-1 ${currentStep === 2 ? "bg-indigo-600" : "bg-gray-700"}`}></span>
-                                <button onClick={()=> nextButtonRef.current?.click()} className={`cursor-pointer transition duration-200 size-4 rounded-full ${currentStep === 2 ? "bg-indigo-500 ring-4 ring-indigo-400" : "bg-gray-600"}`}></button>
+                            <div className="flex items-center w-full max-w-[9rem] ">
+                                <span className={`w-5 h-1 bg-gradient-to-r from-transparent to-indigo-600`}></span>
+                                <button onClick={()=> backButtonRef.current?.click()} className={`cursor-pointer transition duration-200 z-0 size-7 text-sm active:ring-4 flex justify-center items-center font-semibold rounded-full bg-indigo-500 ${currentStep === 1 ? "ring-4 ring-indigo-400" : ""}`}>1</button>
+                                <span className={`transition duration-200 flex-1/3 h-1 ${currentStep === 2 ? "bg-indigo-600" : "bg-gray-700"}`}></span>
+                                <button onClick={()=> nextButtonRef.current?.click()} className={`cursor-pointer transition duration-200 size-7 text-sm active:ring-4 flex justify-center items-center font-semibold rounded-full ${currentStep === 2 ? "bg-indigo-500 ring-4 ring-indigo-400" : "bg-gray-600"}`}>2</button>
                             </div>
                         </div>
 
